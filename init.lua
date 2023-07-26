@@ -15,5 +15,5 @@ require "telescope-config"
 require "toggleterm-config"
 require "treesitter-config"
 require "undotree-config"
+require "mysql-viewer"
 require "whichkey"
-

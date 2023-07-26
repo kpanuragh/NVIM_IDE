@@ -4,7 +4,6 @@ local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
     return
 end
-
 local setup = {
     plugins = {
         marks = true,         -- shows a list of your marks on ' and `
@@ -119,12 +118,12 @@ local mappings = {
             "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
             "Workspace Symbols",
         },
-        K = {"<cmd>lua vim.lsp.buf.hover()<cr>","Hover"},
-        d = {"<cmd>lua vim.lsp.buf.definition()<cr>","Definition"},
-        D = {"<cmd>lua vim.lsp.buf.declaration()<cr>","Declaration"},
-        i = {"<cmd>lua vim.lsp.buf.implementation()<cr>","Implementation"},
-        R = {"<cmd>lua vim.lsp.buf.references()<cr>","Reference"},
-        I = {"<cmd>lua vim.lsp.buf.signature_help()<cr>","Signature"}
+        K = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
+        d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
+        D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
+        i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
+        R = { "<cmd>lua vim.lsp.buf.references()<cr>", "Reference" },
+        I = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature" }
     },
     --Toggle Term
     t = {
@@ -160,6 +159,25 @@ local mappings = {
             "<cmd>Gitsigns diffthis HEAD<cr>",
             "Diff",
         },
+    },
+    d = {
+        name = "Database",
+        a = { "<cmd>lua require ('mysql-viewer').addDBConnection()<cr>", "Add Connection" },
+        d = { "<cmd>lua require ('mysql-viewer').getDatabases()<cr>", "Databases" },
+        t = { "<cmd>lua require ('mysql-viewer').getTables()<cr>", "Tables" },
+        e = { "<cmd>lua require ('mysql-viewer').executSelected()<cr>", "Execute" },
+        n = { "<cmd>lua require ('mysql-viewer').nextData()<cr>", "Next" },
+        p = { "<cmd>lua require ('mysql-viewer').prevData()<cr>", "Previous" }
+    },
+    p = {
+        name = "ChatGPT",
+        e = {
+            function()
+                require("chatgpt").edit_with_instructions()
+            end,
+            "Edit with instructions",
+        },
+        o = {"<cmd>ChatGPT<cr>", "Open ChatGPT"},
     },
 }
 
