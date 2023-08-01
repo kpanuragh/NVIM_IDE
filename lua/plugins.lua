@@ -50,21 +50,21 @@ return {
             { 'neovim/nvim-lspconfig' },             -- Required
             { 'williamboman/mason.nvim' },           -- Optional
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-                        -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },         -- Required
-            { 'hrsh7th/cmp-nvim-lsp' },     -- Required
-            { 'hrsh7th/cmp-buffer' },       -- Optional
-            { 'hrsh7th/cmp-path' },         -- Optional
-            { 'saadparwaiz1/cmp_luasnip' }, -- Optional
-            { 'hrsh7th/cmp-nvim-lua' },     -- Optional
-            {'onsails/lspkind.nvim'},
-            {'simrat39/inlay-hints.nvim'},
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' },                  -- Required
+            { 'hrsh7th/cmp-nvim-lsp' },              -- Required
+            { 'hrsh7th/cmp-buffer' },                -- Optional
+            { 'hrsh7th/cmp-path' },                  -- Optional
+            { 'saadparwaiz1/cmp_luasnip' },          -- Optional
+            { 'hrsh7th/cmp-nvim-lua' },              -- Optional
+            { 'onsails/lspkind.nvim' },
+            { 'simrat39/inlay-hints.nvim' },
             -- Snippets
             { 'L3MON4D3/LuaSnip' },             -- Required
             { 'rafamadriz/friendly-snippets' }, -- Optional
         }
     },
-    {'kevinhwang91/nvim-ufo',dependencies='kevinhwang91/promise-async'},
+    { 'kevinhwang91/nvim-ufo',        dependencies = 'kevinhwang91/promise-async' },
     -- Nvimtree (File Explorer)
     {
         'nvim-tree/nvim-tree.lua',
@@ -147,11 +147,15 @@ return {
         }
     }
     ,
-     {
+    {
         "kdheepak/lazygit.nvim",
         -- optional for floating window border decoration
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
-    } 
+    },
+    { "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+                                                                                    setup = function() vim.g.mkdp_filetypes = {
+                "markdown" } end,                                                                                                             ft = {
+        "markdown" }, }
 }
