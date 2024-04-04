@@ -9,5 +9,16 @@ return {
         config = function()
             require("nvim-tree").setup()
         end
-    }
+    },
+      {
+        "jiaoshijie/undotree",
+      dependencies  = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
+       -- Toggle Term
+    {
+        'akinsho/toggleterm.nvim',
+        config = true
+    },
 }

@@ -1,4 +1,4 @@
-lcal status_ok, which_key = pcall(require, "which-key")
+local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
     return
 end
@@ -91,6 +91,20 @@ local mappings = {
         b = {"<cmd>Gitsigns toggle_current_line_blame<CR>", "Blame"},
         c = {"<cmd>Telescope git_commits<CR>", "Commits"}
     },
+    c = {
+        name="Code",
+        d = {"<cmd>lua vim.lsp.buf.definition()<CR>", "Go to Definition"},
+        r = {"<cmd>lua vim.lsp.buf.references()<CR>", "Find References"},
+        f = {"<cmd>lua require('conform').format({ async = true, lsp_fallback = true })<CR>", "Format"},
+        a = {"<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action"},
+        s = {"<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help"},
+        h = {"<cmd>lua vim.lsp.buf.hover()<CR>", "Hover"},
+        p = {"<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>", "Document Symbols"},
+        P = {"<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>", "Workspace Symbols"},
+        R = {"<cmd>lua require('telescope.builtin').lsp_references()<CR>", "References"},
+        S = {"<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>", "Dynamic Workspace Symbols"}
+
+    }
 }
 
 which_key.setup(setup)

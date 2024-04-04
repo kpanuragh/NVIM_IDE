@@ -1,39 +1,52 @@
 return {
     {
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
-  opts = {},
-  config = function()
-      require("tokyonight").setup({})
-      vim.cmd.colorscheme "tokyonight-moon"
-  end
-  },
-  {
+    'catppuccin/nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+        require 'config/catppuccin'
+    end
+},
+      {
     'nvim-lualine/lualine.nvim',
     opts = {
       options = {
         icons_enabled = false,
         component_separators = '|',
         section_separators = '',
-      },
-      theme = 'tokyonight',
+      }
     },
+  }, 
+{
+  "folke/noice.nvim",
+  event = "VeryLazy",
+  opts = {
+    -- add any options here
   },
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    -- i don't think lazy will be able to guess 
-    -- `ibl` is the main module, so set it manually
-    main = 'ibl',
-    opts = {
-      enabled = true,
-      scope = {
-        enabled = false,
-      },
-      indent = {
-        char = '▏',
-      },
+  dependencies = {
+    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    "MunifTanjim/nui.nvim",
+    -- OPTIONAL:
+    --   `nvim-notify` is only needed, if you want to use the notification view.
+    --   If not available, we use `mini` as the fallback
+    "rcarriga/nvim-notify",
     }
-  }
+},
+-- setup rainbow-delimiters.nvim
+{
+        "HiPhish/rainbow-delimiters.nvim",
+        config = function ()
+     end
+  },
+      -- Bufferline
+    {
+        'akinsho/bufferline.nvim',
+        dependencies = {
+            'nvim-tree/nvim-web-devicons'
+        },
+        config = function()
+            require('config/bufferline')
+        end
+    },
 }
 

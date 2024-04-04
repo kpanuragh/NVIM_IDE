@@ -14,3 +14,9 @@ options.set_options()
 
 -- Load and configure plugins
 plugins.init_plugins()
+-- TODO: Add more plugins
+-- PERF: Load plugins lazily
+-- HACK: dashboard
+-- NOTE: testing
+-- FIX: testing
+-- WARNING: testing
