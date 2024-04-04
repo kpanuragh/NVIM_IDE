@@ -14,7 +14,7 @@
 
 1.  Install Neovim (0.7 or newer recommended).
 2.  Clone this repository into your Neovim configuration directory (usually `~/.config/nvim`).
-3.  Install required plugins using your preferred plugin manager (e.g., `vim-plug`: `:PlugInstall`).
+3.  Open nvim
 
 **Keybindings:**
 
