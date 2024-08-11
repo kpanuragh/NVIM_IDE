@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = { "lua_ls", "rust_analyzer" ,"intelephense","tsserver","html","cssls","gopls"},
+    ensure_installed = { "lua_ls", "rust_analyzer" ,"phpactor","tsserver","html","cssls","gopls"},
 }
   -- Set up lspconfig.
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
